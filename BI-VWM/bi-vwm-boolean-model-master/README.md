@@ -2,8 +2,6 @@
 
 Tento projekt je semestrální prací pro předmět „Vyhledávání na webu a v multimediálních databázích“ (BI-VWM). Projekt implementuje Booleovský model pro získávání informací. Projekt je rozdělen do několik sub projektů a využívá gradle.
 
-Odkaz na hostovanou webovou aplikaci - http://157.230.100.180:8080/
-
 ## bm-scraper
 
 Sub projekt, který má za úkol vytvoření data setu různých článků z Wikipedie. Využívá odkaz, který uživatele přesměruje na random článek na Wikipedii ([Wikipedia Special Random](https://en.wikipedia.org/wiki/Wikipedia:Special:Random)). Ze stránky článku se pak vezme několik odstavců. Odstavce společně s názvem a odkazem na článek jsou uloženy do souboru. Pro každý článek je jeden soubor. 
