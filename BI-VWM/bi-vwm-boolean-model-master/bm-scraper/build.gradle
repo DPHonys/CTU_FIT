@@ -1,0 +1,7 @@
+application {
+    mainClass = 'cz.cvut.fit.honysdan.bm.scraper.Main'
+}
+
+dependencies {
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.14.3'
+}

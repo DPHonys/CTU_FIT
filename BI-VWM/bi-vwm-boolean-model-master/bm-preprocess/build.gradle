@@ -1,0 +1,10 @@
+application {
+    mainClass = 'cz.cvut.fit.honysdan.bm.preprocess.Main'
+}
+
+dependencies {
+    implementation group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '4.4.0'
+    implementation group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '4.4.0', classifier: 'models'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.5.Final'
+    implementation project(":bm-db-utils")
+}

@@ -1,0 +1,6 @@
+rootProject.name = 'bi-vwm-boolean-model'
+include 'bm-scraper'
+include 'bm-preprocess'
+include 'bm-web-app'
+include 'bm-db-utils'
+

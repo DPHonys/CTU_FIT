@@ -1,0 +1,15 @@
+TERM=1
+OR=2
+AND=3
+NOT=4
+LPAREN=5
+RPAREN=6
+END=7
+WHITESPACE=8
+'OR'=2
+'AND'=3
+'NOT'=4
+'('=5
+')'=6
+'\n'=7
+' '=8

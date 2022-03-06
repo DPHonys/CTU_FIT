@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'com.vaadin' version '0.14.3.7' apply false
+}
+
+allprojects {
+    apply plugin: 'java'
+}
+
+subprojects {
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    group 'cz.cvut.fit.honysdan.bm'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.36'
+        implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.10'
+        implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    }
+}
+
+project (':bm-scraper') {
+    apply plugin: 'application'
+}
+
+project (':bm-db-utils') {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+}
+
+project (':bm-preprocess') {
+    apply plugin: 'application'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+}
+
+project (':bm-web-app') {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.vaadin'
+}

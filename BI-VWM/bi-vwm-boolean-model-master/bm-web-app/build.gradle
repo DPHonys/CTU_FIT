@@ -1,0 +1,24 @@
+plugins {
+    id 'antlr'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'com.vaadin:vaadin-spring-boot-starter'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.4.4'
+    implementation group: 'org.antlr', name: 'antlr4-runtime', version: '4.9.2'
+    implementation group: 'org.antlr', name: 'antlr4', version: '4.9.2'
+    implementation project(":bm-db-utils")
+}
+
+ext {
+    set('vaadinVersion', "14.5.2")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+    }
+}
