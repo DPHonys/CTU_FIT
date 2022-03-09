@@ -1,6 +1,5 @@
 import serial
 import sys
-from time import sleep
 
 
 class Uart:
@@ -15,10 +14,10 @@ class Uart:
             print("Error while opening " + str(self._ser.port))
             sys.exit()
 
-    def readData(self):  # returns received data as string
+    def read_data(self):  # returns received data as string
         return self._ser.readline().decode("utf-8")
 
-    def writeData(self, data):  # sends string data
+    def write_data(self, data):  # sends string data
         to_send = bytes(data, 'ASCII')
         self._ser.write(to_send)
 
@@ -33,8 +32,8 @@ def main():
             break
 
         if 'g' == line.rstrip() or 'G' == line.rstrip() or 'green' == line.rstrip() or 'GREEN' == line.rstrip():
-            ser.writeData('G')
-            back = ser.readData()
+            ser.write_data('G')
+            back = ser.read_data()
             if back == '1':
                 print("Green led > ON")
                 continue
@@ -43,8 +42,8 @@ def main():
                 continue
 
         if 'b' == line.rstrip() or 'B' == line.rstrip() or 'blue' == line.rstrip() or 'BLUE' == line.rstrip():
-            ser.writeData('B')
-            back = ser.readData()
+            ser.write_data('B')
+            back = ser.read_data()
             if back == '1':
                 print("Blue led > ON")
                 continue
@@ -53,8 +52,8 @@ def main():
                 continue
 
         if 'r' == line.rstrip() or 'R' == line.rstrip() or 'red' == line.rstrip() or 'RED' == line.rstrip():
-            ser.writeData('R')
-            back = ser.readData()
+            ser.write_data('R')
+            back = ser.read_data()
             if back == '1':
                 print("Red led > ON")
                 continue
@@ -63,8 +62,8 @@ def main():
                 continue
 
         if 'j' == line.rstrip() or 'J' == line.rstrip() or 'joy' == line.rstrip() or 'JOY' == line.rstrip():
-            ser.writeData('J')
-            back = ser.readData()
+            ser.write_data('J')
+            back = ser.read_data()
             x, y = back.split(' ')
             print(f'Joystick - X {x} Y {y}')
             continue
