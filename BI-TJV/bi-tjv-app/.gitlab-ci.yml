@@ -1,0 +1,14 @@
+image: openjdk:15-jdk
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - ./gradlew clean build -Pvaadin.productionMode
+  artifacts:
+    paths:
+      - build/libs/*.jar
+  only:
+    - master

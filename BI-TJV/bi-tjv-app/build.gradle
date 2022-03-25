@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.3.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'com.vaadin' version '0.14.3.7'
+}
+
+defaultTasks("clean", "build")
+
+group 'cz.fit.cvut.honysdan'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://maven.vaadin.com/vaadin-addons"
+	}
+}
+
+ext {
+  set('vaadinVersion', "14.4.4")
+}
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+
+dependencies {
+	compile "org.vaadin.gatanaso:multiselect-combo-box-flow:3.0.2"
+	implementation('com.vaadin:vaadin-spring-boot-starter') {
+//         Webjars are only needed when running in Vaadin 13 compatibility mode
+		["com.vaadin.webjar", "org.webjars.bowergithub.insites",
+		 "org.webjars.bowergithub.polymer", "org.webjars.bowergithub.polymerelements",
+		 "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents"]
+				.forEach { group -> exclude(group: group) }
+	}
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+	}
+}

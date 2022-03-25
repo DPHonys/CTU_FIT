@@ -1,0 +1,72 @@
+/*
+   CSS styling examples for the Vaadin app.
+   Visit https://vaadin.com/docs/flow/theme/theming-overview.html and
+   https://vaadin.com/themes/lumo for more information.
+*/
+
+/* Example: CSS class name to center align the content . */
+.centered-content {
+  margin: 0 auto;
+  max-width: 250px;
+}
+
+.Notification-span {
+  white-space: nowrap;
+  padding-right: 50px;
+}
+
+.My-Notification {
+  white-space: nowrap;
+}
+
+.pokemon-view .content, .trainer-view .content, .move-view .content {
+  display: flex;
+}
+
+.pokemon-grid, .trainer-grid, .move-grid {
+  flex: 2;
+}
+
+.pokemon-form, .trainer-form, .move-form {
+  flex: 1;
+  padding: var(--lumo-space-m);
+  padding-right: 0;
+}
+
+.buttons {
+  padding-top: 25px;
+}
+
+@media all and (max-width: 1100px) {
+  .pokemon-view.editing .pokemon-grid {
+    display: none;
+  }
+  .pokemon-view.editing .toolbar {
+    display: none;
+  }
+  .pokemon-form {
+    padding-left: 0;
+  }
+}
+
+a[highlight] {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.header {
+  padding: 0 var(--lumo-space-m);
+}
+
+.logo {
+  margin-top: 0.75em;
+  font-size: 2em;
+}
+
+.add-move, .remove-move {
+  margin: 0;
+}
+
+.p-box, .m-box {
+  margin-top: 0;
+}
